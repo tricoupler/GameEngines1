@@ -1,13 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://c7a8di7l2iqn4"]
 
-[ext_resource type="Script" path="res://scenes/mesh_instance_3d.gd" id="1_7b38j"]
 [ext_resource type="Material" uid="uid://cq8tpodm0rcui" path="res://brick.tres" id="1_wk57i"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_dxc7f"]
 
-[node name="Brick" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_6gsxc"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_wk57i")
 mesh = SubResource("BoxMesh_dxc7f")
-script = ExtResource("1_7b38j")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_6gsxc")
