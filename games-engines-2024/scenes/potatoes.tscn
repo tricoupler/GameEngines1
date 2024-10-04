@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dhcncofdn614w"]
+[gd_scene load_steps=15 format=3 uid="uid://dhcncofdn614w"]
 
 [ext_resource type="Material" uid="uid://pte1fm2iakrd" path="res://green.tres" id="1_kjgnj"]
 [ext_resource type="Script" path="res://scenes/TPCamera.gd" id="1_lcfri"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scenes/wall.gd" id="4_3w8qn"]
 [ext_resource type="PackedScene" uid="uid://c7a8di7l2iqn4" path="res://scenes/brick.tscn" id="5_p7r71"]
 [ext_resource type="PackedScene" uid="uid://d0d3b5bha4mi5" path="res://scenes/bullet.tscn" id="6_t8ewp"]
+[ext_resource type="PackedScene" uid="uid://bm1onloi3kpfw" path="res://scenes/train-locomotive-a.fbx" id="8_w4skc"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_rlff0"]
 size = Vector2(100, 100)
@@ -78,5 +79,8 @@ shape = SubResource("BoxShape3D_ht5wb")
 
 [node name="bullet_spawn" type="Marker3D" parent="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.560753, -1.17637)
+
+[node name="train-locomotive-a" parent="CharacterBody3D" instance=ExtResource("8_w4skc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.994876, -0.5, -12.7994)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

@@ -54,5 +54,5 @@ func _physics_process(delta: float) -> void:
 		bullet.global_position = bullet_target.global_position
 		bullet.global_rotation = global_rotation
 		
-	
+		
 	pass
