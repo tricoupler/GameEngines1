@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d2cnv7v7huh3k"]
+[gd_scene load_steps=20 format=3 uid="uid://d2cnv7v7huh3k"]
 
 [ext_resource type="Script" path="res://scenes/TPCamera.gd" id="1_1bql5"]
 [ext_resource type="Material" uid="uid://dvo75cymypytd" path="res://green.tres" id="1_ljfv3"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c1bnq83851e46" path="res://bullet.tscn" id="6_ngcvm"]
 [ext_resource type="Script" path="res://scenes/tower.gd" id="8_57hm3"]
 [ext_resource type="Texture2D" uid="uid://yjphgwjdm25g" path="res://skybox.jpg" id="9_fkc71"]
+[ext_resource type="PackedScene" uid="uid://bm1onloi3kpfw" path="res://scenes/train-locomotive-a.fbx" id="10_rkueu"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_00q4b"]
 size = Vector2(100, 100)
@@ -33,7 +34,11 @@ sky_material = SubResource("PanoramaSkyMaterial_5i5rx")
 
 [sub_resource type="Environment" id="Environment_gi1b2"]
 background_mode = 2
+background_energy_multiplier = 5.21
 sky = SubResource("Sky_flctv")
+ssr_enabled = true
+ssao_enabled = true
+glow_enabled = true
 fog_enabled = true
 fog_light_color = Color(0.312709, 0.330104, 0.357438, 1)
 fog_density = 0.1
@@ -114,3 +119,6 @@ brick_size = 1.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gi1b2")
+
+[node name="train-locomotive-a" parent="." instance=ExtResource("10_rkueu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2814, 0, -6.95527)
