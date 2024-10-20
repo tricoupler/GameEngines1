@@ -27,7 +27,7 @@ size = Vector3(0.1, 0.1, 1)
 [node name="root" type="Node3D"]
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target", "player")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.34612, -17.565)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 3.34612, -17.565)
 script = ExtResource("1_1bql5")
 target = NodePath("../tank/cam_target")
 player = NodePath("../tank")
@@ -52,13 +52,14 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_307sh")
 
-[node name="tank" type="CharacterBody3D" parent="." node_paths=PackedStringArray("bullet_spawn")]
+[node name="tank" type="CharacterBody3D" parent="." node_paths=PackedStringArray("bullet_spawn", "enemy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 floor_constant_speed = true
 script = ExtResource("3_1hidi")
 speed = 10.0
 bullet_scene = ExtResource("6_ngcvm")
 bullet_spawn = NodePath("bullet_spawn")
+enemy = NodePath("../enemy")
 
 [node name="player" type="MeshInstance3D" parent="tank"]
 material_override = ExtResource("2_cp1av")
@@ -94,3 +95,5 @@ brick_scene = ExtResource("5_nw2f7")
 radius = 5.0
 elements = 22
 brick_size = 1.0
+
+[node name="enemy" type="Node3D" parent="."]
