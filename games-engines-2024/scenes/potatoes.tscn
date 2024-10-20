@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d2cnv7v7huh3k"]
+[gd_scene load_steps=19 format=3 uid="uid://d2cnv7v7huh3k"]
 
 [ext_resource type="Script" path="res://scenes/TPCamera.gd" id="1_1bql5"]
 [ext_resource type="Material" uid="uid://dvo75cymypytd" path="res://green.tres" id="1_ljfv3"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://buu3aq61omx1k" path="res://brick.tscn" id="5_nw2f7"]
 [ext_resource type="PackedScene" uid="uid://c1bnq83851e46" path="res://bullet.tscn" id="6_ngcvm"]
 [ext_resource type="Script" path="res://scenes/tower.gd" id="8_57hm3"]
+[ext_resource type="Texture2D" uid="uid://yjphgwjdm25g" path="res://skybox.jpg" id="9_fkc71"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_00q4b"]
 size = Vector2(100, 100)
@@ -23,6 +24,19 @@ size = Vector3(0.1, 0.1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yo8sf"]
 size = Vector3(0.1, 0.1, 1)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_5i5rx"]
+panorama = ExtResource("9_fkc71")
+
+[sub_resource type="Sky" id="Sky_flctv"]
+sky_material = SubResource("PanoramaSkyMaterial_5i5rx")
+
+[sub_resource type="Environment" id="Environment_gi1b2"]
+background_mode = 2
+sky = SubResource("Sky_flctv")
+fog_enabled = true
+fog_light_color = Color(0.312709, 0.330104, 0.357438, 1)
+fog_density = 0.1
 
 [node name="root" type="Node3D"]
 
@@ -97,3 +111,6 @@ elements = 22
 brick_size = 1.0
 
 [node name="enemy" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gi1b2")
