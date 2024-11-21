@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://boh8e6hop7l3w"]
+[gd_scene load_steps=8 format=3 uid="uid://boh8e6hop7l3w"]
 
 [ext_resource type="Script" path="res://FPController.gd" id="2_rl0e7"]
 [ext_resource type="Material" uid="uid://12bqh76svrfe" path="res://blue.tres" id="2_s74er"]
 [ext_resource type="PackedScene" uid="uid://d2v5tptyj6j6i" path="res://terrain_tile.tscn" id="3_vb03k"]
 [ext_resource type="Script" path="res://infinite_terrain.gd" id="4_c8kae"]
+[ext_resource type="PackedScene" uid="uid://fkc52ltqpg28" path="res://vehicles/taxi.glb" id="5_1scob"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_hmt7t"]
 
@@ -15,7 +16,6 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 5)
 script = ExtResource("2_rl0e7")
 speed = 100.0
-rot_speed = 180.0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.474672, 0.880163, 0, -0.633669, 0.341738, 0.69403, 0.61086, -0.329437, 0.719946, 0, 11.0446, 0)
@@ -31,3 +31,6 @@ player = NodePath("../Camera3D")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g3xt2")
+
+[node name="taxi" parent="." instance=ExtResource("5_1scob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43833, 1.37658, -2.29118)
