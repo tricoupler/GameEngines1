@@ -7,7 +7,7 @@ extends Node3D
 
 @export var score = 0
 @export var speed:float = 10
-@export var rot_speed =100
+@export var rot_speed =0.5
 var controlling = true
 
 var relative:Vector2 = Vector2.ZERO
